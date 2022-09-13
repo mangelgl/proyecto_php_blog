@@ -2,10 +2,27 @@
 <!-- BARRA LATERAL -->
 <aside id="sidebar">
 
+	<?php if (isset($_SESSION["usuario"])) : ?>
+		<div id="usuario-logueado" class="bloque">
+			<h4>Bienvenido, <?= $_SESSION["usuario"]["nombre"] . " " . $_SESSION["usuario"]["apellidos"]; ?></h4>
+			<!-- Botones -->
+			<a href="cerrar_sesion.php" class="boton boton-verde">Crear entradas</a>
+			<a href="cerrar_sesion.php" class="boton boton-morado">Crear categorías</a>
+			<a href="cerrar_sesion.php" class="boton boton-naranja">Mis datos</a>
+			<a href="cerrar_sesion.php" class="boton">Cerrar sesión</a>
+		</div>
+	<?php endif; ?>
+
 	<div id="login" class="bloque">
 		<h3>Identificate</h3>
+		<?php if (isset($_SESSION["error_login"])) : ?>
+			<div class="alerta alerta-error">
+				<?= $_SESSION["error_login"]; ?>
+			</div>
+		<?php endif; ?>
+
 		<form action="login.php" method="POST">
-			<input type="email" name="email" placeholder="Email o usuario" />
+			<input type="text" name="nickname" placeholder="Usuario" />
 			<input type="password" name="password" autocomplete="off" placeholder="Password" />
 
 			<input type="submit" value="Entrar" />

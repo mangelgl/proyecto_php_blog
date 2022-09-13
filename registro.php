@@ -11,11 +11,11 @@ if (isset($_POST)) {
 
 	// Recorger los valores del formulario de registro
 	// Escapar valores en mysql
-	$usuario = isset($_POST['usuario']) ? mysqli_real_escape_string($con, $_POST['usuario'])  : false;
+	$usuario = isset($_POST['usuario']) ? mysqli_real_escape_string($con, trim($_POST['usuario']))  : false;
 	$nombre = isset($_POST['nombre']) ? mysqli_real_escape_string($con, $_POST['nombre']) : false;
 	$apellidos = isset($_POST['apellidos']) ? mysqli_real_escape_string($con, $_POST['apellidos']) : false;
-	$email = isset($_POST['email']) ? mysqli_real_escape_string($con, $_POST['email']) : false;
-	$password = isset($_POST['password']) ? mysqli_real_escape_string($con, $_POST['password']) : false;
+	$email = isset($_POST['email']) ? mysqli_real_escape_string($con, trim($_POST['email'])) : false;
+	$password = isset($_POST['password']) ? mysqli_real_escape_string($con, trim($_POST['password'])) : false;
 
 	// Array de errores
 	$errores = array();

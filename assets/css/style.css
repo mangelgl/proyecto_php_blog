@@ -143,10 +143,32 @@ input[type="submit"],
     display: block;
     border-radius: 2px;
     color:white;
-    background: #007ee5;
+    background-color: #16abf5;
     border: 1px solid #156785;
     cursor:pointer;
     padding: 7px;
+}
+
+.boton {
+    width: 100px;
+    font-size: 13px;
+    background-color: #aa2020;
+    border-color: black;
+} .boton-naranja {
+    background-color: orange;
+    border-color: #685126;
+} .boton-verde {
+    background-color: #39c357;
+    border-color: #176027;
+} .boton-morado {
+    background-color: #783acb;
+    border-color: #441075;
+}
+
+#usuario-logueado > h4 {
+    margin-bottom: 10px;
+} #usuario-logueado > p {
+    font-size: 14px;
 }
 
 .alerta {
@@ -206,10 +228,11 @@ input[type="submit"],
     border-radius: 2px;
     padding: 15px;
     color:white;
-    background: #007ee5;
+    background-color: #16abf5;
     border: 1px solid #156785;
     cursor:pointer;
-    width: 160px;
+    width: 140px;
+    font-size: 14px;
     margin: 0px auto;
     margin-top:50px;
 }
