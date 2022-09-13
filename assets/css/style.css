@@ -149,6 +149,21 @@ input[type="submit"],
     padding: 7px;
 }
 
+.alerta {
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    background-color: green;
+    box-shadow: 2px 3px 2px #ccc;
+    margin-bottom: 15px;
+    border-radius: 2px;
+}
+
+.alerta-error {
+    background: #cc4847;
+}
+
 /*PRINCIPAL*/
 #principal{
     float: left;

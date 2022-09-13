@@ -4,12 +4,18 @@ if (isset($_POST)) {
 	// Conexión a la base de datos
 	require_once 'includes/conexion.php';
 
+	// Iniciar la sesión
+	if (!isset($_SESSION)) {
+		session_start();
+	}
+
 	// Recorger los valores del formulario de registro
-	$usuario = isset($_POST['usuario']) ? $_POST['usuario'] : false;
-	$nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
-	$apellidos = isset($_POST['apellidos']) ? $_POST['apellidos'] : false;
-	$email = isset($_POST['email']) ? $_POST['email'] : false;
-	$password = isset($_POST['password']) ? $_POST['password'] : false;
+	// Escapar valores en mysql
+	$usuario = isset($_POST['usuario']) ? mysqli_real_escape_string($con, $_POST['usuario'])  : false;
+	$nombre = isset($_POST['nombre']) ? mysqli_real_escape_string($con, $_POST['nombre']) : false;
+	$apellidos = isset($_POST['apellidos']) ? mysqli_real_escape_string($con, $_POST['apellidos']) : false;
+	$email = isset($_POST['email']) ? mysqli_real_escape_string($con, $_POST['email']) : false;
+	$password = isset($_POST['password']) ? mysqli_real_escape_string($con, $_POST['password']) : false;
 
 	// Array de errores
 	$errores = array();
@@ -60,11 +66,13 @@ if (isset($_POST)) {
 		// Insertar usuario en base de datos
 		$sql = "INSERT INTO seg_users_prueba VALUES (null, '$nombre', '$apellidos', '$email', '$usuario', '$password_segura', CURRENT_TIMESTAMP())";
 		$result = mysqli_query($con, $sql);
+		$error = mysqli_errno($con) . mysqli_error($con);
 
-		if ($result) {
+		if (!$error) {
 			$_SESSION["completado"] = "El registro se ha completado con éxito";
 		} else {
 			$_SESSION["errores"]["general"] = "Fallo al guardar el usuario";
+			$_SESSION["errores"]["mensaje"] = $error;
 		}
 	} else {
 		$_SESSION['errores'] = $errores;
