@@ -25,3 +25,16 @@ function borrarErrores()
 	session_unset();
 	return $borrado;
 }
+
+function conseguirCategorias($con)
+{
+	$sql = "SELECT * FROM categorias";
+	$categorias = mysqli_query($con, $sql);
+	$result = array();
+
+	if ($categorias && mysqli_num_rows($categorias) >= 1) {
+		$result = $categorias;
+	}
+
+	return $result;
+}

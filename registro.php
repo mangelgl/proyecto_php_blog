@@ -21,39 +21,39 @@ if (isset($_POST)) {
 	$errores = array();
 
 	// Validar los datos antes de guardarlos en la base de datos
-	if (!empty($usuario) && !is_numeric($usuario)) {
+	if (!empty($usuario)) {
 		$usuario_validado = true;
 	} else {
 		$usuario_validado = false;
-		$errores['usuario'] = "El usuario no es válido";
+		$errores['usuario'] = "Por favor, introduce un valor válido.";
 	}
 
 	if (!empty($nombre) && !is_numeric($nombre) && !preg_match("/[0-9]/", $nombre)) {
 		$nombre_validado = true;
 	} else {
 		$nombre_validado = false;
-		$errores['nombre'] = "El nombre no es válido";
+		$errores['nombre'] = "Por favor, introduce un valor válido.";
 	}
 
 	if (!empty($apellidos) && !is_numeric($apellidos) && !preg_match("/[0-9]/", $apellidos)) {
 		$apellidos_validado = true;
 	} else {
 		$apellidos_validado = false;
-		$errores['apellidos'] = "Los apellidos no son válido";
+		$errores['apellidos'] = "Por favor, introduce un valor válido.";
 	}
 
 	if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
 		$email_validado = true;
 	} else {
 		$email_validado = false;
-		$errores['email'] = "El email no es válido";
+		$errores['email'] = "Por favor, introduce un email válido.";
 	}
 
 	if (!empty($password)) {
 		$password_validado = true;
 	} else {
 		$password_validado = false;
-		$errores['password'] = "La contraseña está vacía";
+		$errores['password'] = "La contraseña no puede estar vacía.";
 	}
 
 	$guardar_usuario = false;

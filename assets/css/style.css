@@ -143,7 +143,7 @@ input[type="submit"],
     display: block;
     border-radius: 2px;
     color:white;
-    background-color: #16abf5;
+    background-color: #2979CD;
     border: 1px solid #156785;
     cursor:pointer;
     padding: 7px;
@@ -152,8 +152,6 @@ input[type="submit"],
 .boton {
     width: 100px;
     font-size: 13px;
-    background-color: #aa2020;
-    border-color: black;
 } .boton-naranja {
     background-color: orange;
     border-color: #685126;
@@ -163,6 +161,9 @@ input[type="submit"],
 } .boton-morado {
     background-color: #783acb;
     border-color: #441075;
+} .boton-logout {
+    background-color: #aa2020;
+    border-color: #833333;
 }
 
 #usuario-logueado > h4 {
@@ -228,7 +229,7 @@ input[type="submit"],
     border-radius: 2px;
     padding: 15px;
     color:white;
-    background-color: #16abf5;
+    background-color: #2979CD;
     border: 1px solid #156785;
     cursor:pointer;
     width: 140px;

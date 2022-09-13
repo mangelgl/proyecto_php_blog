@@ -1,4 +1,3 @@
-<?php require_once 'includes/helpers.php'; ?>
 <!-- BARRA LATERAL -->
 <aside id="sidebar">
 
@@ -9,7 +8,7 @@
 			<a href="cerrar_sesion.php" class="boton boton-verde">Crear entradas</a>
 			<a href="cerrar_sesion.php" class="boton boton-morado">Crear categorías</a>
 			<a href="cerrar_sesion.php" class="boton boton-naranja">Mis datos</a>
-			<a href="cerrar_sesion.php" class="boton">Cerrar sesión</a>
+			<a href="cerrar_sesion.php" class="boton boton-logout">Cerrar sesión</a>
 		</div>
 	<?php endif; ?>
 
