@@ -6,22 +6,19 @@
 <div id="principal">
 	<h1>Últimas entradas</h1>
 
-	<article class="entrada">
-		<h2>Título de la entrada</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet in tortor sit amet venenatis. Fusce dictum faucibus diam a pretium. Curabitur sit amet augue sollicitudin odio sagittis fringilla a bibendum quam. Integer fringilla finibus tortor, sed volutpat purus pellentesque eu. Nam fringilla nec nibh sed viverra.</p>
-	</article>
-	<article class="entrada">
-		<h2>Título de la entrada</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet in tortor sit amet venenatis. Fusce dictum faucibus diam a pretium. Curabitur sit amet augue sollicitudin odio sagittis fringilla a bibendum quam. Integer fringilla finibus tortor, sed volutpat purus pellentesque eu. Nam fringilla nec nibh sed viverra.</p>
-	</article>
-	<article class="entrada">
-		<h2>Título de la entrada</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet in tortor sit amet venenatis. Fusce dictum faucibus diam a pretium. Curabitur sit amet augue sollicitudin odio sagittis fringilla a bibendum quam. Integer fringilla finibus tortor, sed volutpat purus pellentesque eu. Nam fringilla nec nibh sed viverra.</p>
-	</article>
-	<article class="entrada">
-		<h2>Título de la entrada</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla imperdiet in tortor sit amet venenatis. Fusce dictum faucibus diam a pretium. Curabitur sit amet augue sollicitudin odio sagittis fringilla a bibendum quam. Integer fringilla finibus tortor, sed volutpat purus pellentesque eu. Nam fringilla nec nibh sed viverra.</p>
-	</article>
+	<?php
+	$entradas = conseguirUltimasEntradas($con);
+	if (!empty($entradas)) :
+		while ($entrada = mysqli_fetch_assoc($entradas)) : ?>
+			<article class="entrada">
+				<h2><?= $entrada["titulo"]; ?></h2>
+				<span class="fecha"><?= $entrada["nombre_categoria"] . " | " . $entrada["fecha_creacion"]; ?></span>
+				<p><?= substr($entrada["descripcion"], 0, 200) . "..."; ?></p>
+			</article>
+	<?php
+		endwhile;
+	endif;
+	?>
 
 	<div id="ver-todas">
 		<a href="">Ver todas las entradas</a>

@@ -38,3 +38,21 @@ function conseguirCategorias($con)
 
 	return $result;
 }
+
+function conseguirUltimasEntradas($con)
+{
+	$sql = "SELECT
+				e.*,
+				c.nombre_categoria
+			FROM entradas e
+			JOIN categorias c ON e.categoria_id = c.id
+			ORDER BY e.id DESC LIMIT 4";
+	$entradas = mysqli_query($con, $sql);
+	$result = array();
+
+	if ($entradas && mysqli_num_rows($entradas) >= 1) {
+		$result = $entradas;
+	}
+
+	return $result;
+}

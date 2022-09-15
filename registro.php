@@ -64,7 +64,7 @@ if (isset($_POST)) {
 		$password_segura = password_hash($password, PASSWORD_BCRYPT, ['cost' => 4]);
 
 		// Insertar usuario en base de datos
-		$sql = "INSERT INTO seg_users_prueba VALUES (null, '$nombre', '$apellidos', '$email', '$usuario', '$password_segura', CURRENT_TIMESTAMP())";
+		$sql = "INSERT INTO seg_users VALUES (null, '$nombre', '$apellidos', '$email', '$usuario', '$password_segura', CURRENT_TIMESTAMP())";
 		$result = mysqli_query($con, $sql);
 		$error = mysqli_errno($con) . mysqli_error($con);
 

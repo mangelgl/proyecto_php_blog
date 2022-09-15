@@ -33,11 +33,15 @@ require_once 'helpers.php';
 				<li><a href="index.php">Inicio</a></li>
 				<?php
 				$categorias = conseguirCategorias($con);
-				while ($categoria = mysqli_fetch_assoc($categorias)) : ?>
-					<li>
-						<a href="categoria.php?id=<?= $categoria["id"]; ?>"><?= $categoria["nombre_categoria"]; ?></a>
-					</li>
-				<?php endwhile; ?>
+				if (!empty($categorias)) :
+					while ($categoria = mysqli_fetch_assoc($categorias)) : ?>
+						<li>
+							<a href="categoria.php?id=<?= $categoria["id"]; ?>"><?= $categoria["nombre_categoria"]; ?></a>
+						</li>
+				<?php
+					endwhile;
+				endif;
+				?>
 				<li><a href="index.php">Sobre mí</a></li>
 				<li><a href="index.php">Contacto</a></li>
 			</ul>

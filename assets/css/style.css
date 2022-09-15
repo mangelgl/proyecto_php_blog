@@ -224,6 +224,12 @@ input[type="submit"],
     margin-top: 8px;
 }
 
+.fecha {
+    color: #4e4e4e;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
 #ver-todas a{
     display: block;
     border-radius: 2px;
