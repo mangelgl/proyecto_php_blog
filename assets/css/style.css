@@ -224,6 +224,10 @@ input[type="submit"],
     margin-top: 8px;
 }
 
+#inp-categoria {
+    width: auto;
+}
+
 .fecha {
     color: #4e4e4e;
     margin-top: 5px;

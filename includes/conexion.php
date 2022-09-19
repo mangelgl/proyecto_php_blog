@@ -8,4 +8,6 @@ $basededatos = 'proyecto_php_blog';
 
 $con = mysqli_connect($servidor, $usuario, $password, $basededatos);
 
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}

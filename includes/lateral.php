@@ -5,9 +5,9 @@
 		<div id="usuario-logueado" class="bloque">
 			<h4>Bienvenido, <?= $_SESSION["usuario"]["nombre"] . " " . $_SESSION["usuario"]["apellidos"]; ?></h4>
 			<!-- Botones -->
-			<a href="cerrar_sesion.php" class="boton boton-verde">Crear entradas</a>
-			<a href="cerrar_sesion.php" class="boton boton-morado">Crear categorías</a>
-			<a href="cerrar_sesion.php" class="boton boton-naranja">Mis datos</a>
+			<a href="#" class="boton boton-verde">Crear entradas</a>
+			<a href="crear_categoria.php" class="boton boton-morado">Crear categorías</a>
+			<a href="#" class="boton boton-naranja">Mis datos</a>
 			<a href="cerrar_sesion.php" class="boton boton-logout">Cerrar sesión</a>
 		</div>
 	<?php endif; ?>
