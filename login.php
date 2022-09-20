@@ -15,7 +15,7 @@ if (isset($_POST)) {
 
 
     // Consultar las credenciales del usuario
-    $sql = "SELECT * FROM seg_users_prueba 
+    $sql = "SELECT * FROM seg_users 
     WHERE nickname = '$nickname'";
     $result = mysqli_query($con, $sql);
     $error = mysqli_error($con);
