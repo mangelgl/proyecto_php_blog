@@ -152,6 +152,7 @@ input[type="submit"],
 .boton {
     width: 100px;
     font-size: 13px;
+    color: white !important;
 } .boton-naranja {
     background-color: orange;
     border-color: #685126;
@@ -200,7 +201,7 @@ input[type="submit"],
 }
 
 #principal a{
-    color: #333;
+    color: #2979CD;
 }
 
 #principal h1{

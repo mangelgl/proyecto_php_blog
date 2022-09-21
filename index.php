@@ -7,12 +7,12 @@
 	<h1>Últimas entradas</h1>
 
 	<?php
-	$entradas = conseguirUltimasEntradas($con);
+	$entradas = conseguirEntradas($con, true);
 	if (!empty($entradas)) :
 		while ($entrada = mysqli_fetch_assoc($entradas)) : ?>
 			<article class="entrada">
-				<h2><?= $entrada["titulo"]; ?></h2>
-				<span class="fecha"><?= $entrada["nombre_categoria"] . " | " . $entrada["fecha_creacion"]; ?></span>
+				<h2><a href="entrada.php?id=<?= $entrada["id"]; ?>"><?= $entrada["titulo"]; ?></a></h2>
+				<span class="fecha"><?= $entrada["nombre_categoria"] . " | " . $entrada["fecha_creacion"] . " | " . $entrada["usuario"]; ?></span>
 				<p><?= substr($entrada["descripcion"], 0, 200) . "..."; ?></p>
 			</article>
 	<?php
@@ -21,7 +21,7 @@
 	?>
 
 	<div id="ver-todas">
-		<a href="">Ver todas las entradas</a>
+		<a href="entradas.php">Ver todas las entradas</a>
 	</div>
 </div> <!-- Fin principal -->
 
